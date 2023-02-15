@@ -6,17 +6,21 @@ public class LockRompeEmpate extends Lock {
     private Entero in[], last[];
 
     public LockRompeEmpate(int n){
-        in = new Entero[n + 1];
-        last = new Entero[n + 1];
+        in = new Entero[n];
+        last = new Entero[n];
+        for(int i = 0; i < n; ++i){
+            in[i] = new Entero();
+            last[i] = new Entero();
+        }
     }
 
     @Override
     public void takeLock(int ind) {
-        for(int i = 1; i < in.length; ++i){
-            in[ind].set(i);
-            last[i].set(ind);
-            for(int j = 1; j < in.length; ++j){
-                while(in[j].get() >= in[ind].get() && last[i].get() == ind);
+        for(int i = 0; i < in.length; ++i){
+            in[ind].set(i + 1);
+            last[i].set(ind + 1);
+            for(int j = 0; j < in.length; ++j){
+                while(in[j].get() >= in[ind].get() && last[i].get() == ind + 1);
             }
         }
     }
