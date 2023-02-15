@@ -1,8 +1,8 @@
 package Parte2;
 
 public class Main {
-    private static final int N = 200;
-    private static final int M = 10;
+    private static final int N = 100;
+    private static final int M = 50;
 
     public static void main(String[] args) throws InterruptedException {
         LockRompeEmpate lock = new LockRompeEmpate(2*M);

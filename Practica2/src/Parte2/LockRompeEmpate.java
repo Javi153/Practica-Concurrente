@@ -1,9 +1,7 @@
 package Parte2;
 
-import java.util.concurrent.atomic.AtomicIntegerArray;
-
 public class LockRompeEmpate extends Lock {
-    private Entero in[], last[];
+     private Entero in[], last[];
 
     public LockRompeEmpate(int n){
         in = new Entero[n];
@@ -20,7 +18,9 @@ public class LockRompeEmpate extends Lock {
             in[ind].set(i + 1);
             last[i].set(ind + 1);
             for(int j = 0; j < in.length; ++j){
-                while(in[j].get() >= in[ind].get() && last[i].get() == ind + 1);
+                if(j != ind) {
+                    while (in[j].get() >= in[ind].get() && last[i].get() == ind + 1) ;
+                }
             }
         }
     }

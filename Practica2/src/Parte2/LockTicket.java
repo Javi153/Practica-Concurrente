@@ -1,21 +1,22 @@
 package Parte2;
-
-import java.util.concurrent.atomic.AtomicIntegerArray;
-
 public class LockTicket extends Lock{
     private volatile int number, next;
-    private AtomicIntegerArray turn;
+    private Entero turn[];
 
     public LockTicket(int len){
         number = 1;
         next = 1;
-        turn = new AtomicIntegerArray(len);
+        turn = new Entero[len];
+        for(int i = 0; i < len; ++i){
+            turn[i] = new Entero();
+        }
     }
 
     @Override
     public void takeLock(int ind) {
-        turn.getAndAdd(number, 1);
-        while(turn.get(ind) != next);
+        turn[ind].set(number);
+        number++;
+        while(turn[ind].get() != next);
     }
 
     @Override
