@@ -1,13 +1,11 @@
 package Parte2;
 
-import java.util.concurrent.atomic.AtomicIntegerArray;
-
 public class LockBakery extends Lock{
-    private AtomicIntegerArray turn;
+    private Entero turn[];
     private volatile int max;
 
     public LockBakery(int len){
-        turn = new AtomicIntegerArray(len);
+        turn = new Entero[len];
     }
 
     @Override

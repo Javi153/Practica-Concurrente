@@ -1,11 +1,11 @@
 package Parte2;
 
 public class Main {
-    private static final int N = 100;
-    private static final int M = 50;
+    private static final int N = 30;
+    private static final int M = 10;
 
     public static void main(String[] args) throws InterruptedException {
-        LockRompeEmpate lock = new LockRompeEmpate(2*M);
+        LockTicket lock = new LockTicket(2*M);
         Entero e = new Entero();
         Hilo[] hilos = new Hilo[2*M];
         for(int i = 0; i < M; ++i){
