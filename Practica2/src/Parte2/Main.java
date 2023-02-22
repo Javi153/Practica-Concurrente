@@ -1,11 +1,12 @@
 package Parte2;
 
 public class Main {
-    private static final int N = 30;
-    private static final int M = 10;
+    private static final int N = 20;
+    private static final int M = 20;
 
     public static void main(String[] args) throws InterruptedException {
-        LockTicket lock = new LockTicket(2*M);
+        long t = System.currentTimeMillis();
+        LockBakery lock = new LockBakery(2*M);
         Entero e = new Entero();
         Hilo[] hilos = new Hilo[2*M];
         for(int i = 0; i < M; ++i){
@@ -22,6 +23,7 @@ public class Main {
             hilos[i].join();
             hilos[M + i].join();
         }
-        System.out.println(e.getEntero());
+        System.out.println(e.get());
+        System.out.println(System.currentTimeMillis() - t);
     }
 }

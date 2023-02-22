@@ -7,10 +7,6 @@ public class Entero {
         n = 0;
     }
 
-    public int getEntero(){
-        return n;
-    }
-
     public void incrementar(){
         n++;
     }
