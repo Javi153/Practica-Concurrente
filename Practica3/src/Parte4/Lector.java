@@ -13,6 +13,10 @@ public class Lector extends Thread{
         this.e = e;
         this.r = r;
         this.w = w;
+        this.nr = nr;
+        this.nw = nw;
+        this.dr = dr;
+        this.dw = dw;
     }
 
     public void run() {
