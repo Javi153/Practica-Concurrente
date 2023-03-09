@@ -18,7 +18,7 @@ public class Main {
         Escritor[] escr = new Escritor[N];
         Lector[] lect = new Lector[M];
         for(int i = 0; i < N; ++i){
-            escr[i] = new Escritor(st, NV, w, nr, nw, dw);
+            escr[i] = new Escritor(st, NV, e, r, w, nr, nw, dr, dw);
             escr[i].start();
         }
         for(int i = 0; i < M; ++i){
