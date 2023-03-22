@@ -1,7 +1,3 @@
-package Parte4;
-
-import java.util.concurrent.Semaphore;
-
 public class Main {
     private final static int N = 3;
     private final static int NV = 10;
@@ -9,12 +5,8 @@ public class Main {
     private final static int MV = 10;
     private final static int SS = 20;
     public static void main(String[] args) throws InterruptedException {
-        Integer nr = 0, nw = 0, dr = 0, dw = 0;
-        Semaphore e, r, w;
+        int nr = 0, nw = 0, dr = 0, dw = 0;
         Storage st = new Storage(SS);
-        e = new Semaphore(1, true);
-        r = new Semaphore(0, true);
-        w = new Semaphore(0, true);
         Escritor[] escr = new Escritor[N];
         Lector[] lect = new Lector[M];
         for(int i = 0; i < N; ++i){

@@ -1,5 +1,3 @@
-package Parte4;
-
 public interface Almacen {
     /**
      * Almacena (como ultimo) un producto en el almac ́en. Si no hay

@@ -1,15 +1,13 @@
-package Parte4;
-
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 public class Escritor extends Thread{
     private Random rand;
     private Storage st;
-    private Integer N, nr, nw, dr, dw;
+    private int N, nr, nw, dr, dw;
     private Semaphore e, r, w;
 
-    public Escritor(Storage st, int N, Semaphore e, Semaphore r,Semaphore w, Integer nr, Integer nw, Integer dr, Integer dw){
+    public Escritor(Storage st, int N, Semaphore e, Semaphore r,Semaphore w, int nr, int nw, int dr, int dw){
         this.st = st;
         this.N = N;
         this.e = e;

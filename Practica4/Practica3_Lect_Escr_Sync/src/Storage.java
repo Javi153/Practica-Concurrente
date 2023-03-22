@@ -1,5 +1,3 @@
-package Parte4;
-
 public class Storage implements Almacen {
     private int[] productos;
     private int cap;
@@ -9,16 +7,16 @@ public class Storage implements Almacen {
         cap = n;
     }
     @Override
-    public void escribir(int producto, int pos) {
+    public synchronized void escribir(int producto, int pos) {
         productos[pos % cap] = producto;
     }
 
     @Override
-    public int leer(int pos) {
+    public synchronized int leer(int pos) {
         return productos[pos % cap];
     }
 
-    public int getCap(){
+    public synchronized int getCap(){
         return cap;
     }
 }
