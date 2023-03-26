@@ -61,7 +61,7 @@ public class Storage implements Almacen {
     public int leer(int pos) {
         try {
             e.acquire();
-            if(nw > 0){
+            if(nw > 0 || dw > 0){
                 dr++;
                 e.release();
                 r.acquire();

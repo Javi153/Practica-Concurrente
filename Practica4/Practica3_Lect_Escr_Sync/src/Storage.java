@@ -6,6 +6,7 @@ public class Storage implements Almacen {
         productos = new int[n];
         cap = n;
     }
+
     @Override
     public synchronized void escribir(int producto, int pos) {
         productos[pos % cap] = producto;
@@ -16,7 +17,7 @@ public class Storage implements Almacen {
         return productos[pos % cap];
     }
 
-    public synchronized int getCap(){
+    public int getCap(){
         return cap;
     }
 }
