@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Practica2_Cond/Practica2_Cond.iml" filepath="$PROJECT_DIR$/Practica2_Cond/Practica2_Cond.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practica2_Sync/Practica2_Sync.iml" filepath="$PROJECT_DIR$/Practica2_Sync/Practica2_Sync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica3_Lect_Escr_Cond/Practica3_Lect_Escr_Cond.iml" filepath="$PROJECT_DIR$/Practica3_Lect_Escr_Cond/Practica3_Lect_Escr_Cond.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practica3_Lect_Escr_Sync/Practica3_Lect_Escr_Sync.iml" filepath="$PROJECT_DIR$/Practica3_Lect_Escr_Sync/Practica3_Lect_Escr_Sync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica3_Prod_Cons_Cond/Practica3_Prod_Cons_Cond.iml" filepath="$PROJECT_DIR$/Practica3_Prod_Cons_Cond/Practica3_Prod_Cons_Cond.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practica3_Prod_Cons_Sync/Practica3_Prod_Cons_Sync.iml" filepath="$PROJECT_DIR$/Practica3_Prod_Cons_Sync/Practica3_Prod_Cons_Sync.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Practica4.iml" filepath="$PROJECT_DIR$/.idea/Practica4.iml" />
     </modules>

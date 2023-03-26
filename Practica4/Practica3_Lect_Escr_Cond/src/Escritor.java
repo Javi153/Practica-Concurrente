@@ -13,10 +13,8 @@ public class Escritor extends Thread{
 
     public void run() {
         for(int i = 0; i < N; ++i){
-            st.requestWrite();
             int aux = rand.nextInt(0,150);
             st.escribir(aux, rand.nextInt(0, st.getCap()));
-            st.releaseWrite();
             System.out.println("Soy el escritor " + this.getId() + " y he escrito el elemento " + aux);
         }
     }
