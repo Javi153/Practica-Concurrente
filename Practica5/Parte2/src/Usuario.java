@@ -1,20 +1,31 @@
+import java.io.Serializable;
 import java.net.InetAddress;
+import java.util.ArrayList;
 
-public class Usuario {
-    private int id;
+public class Usuario implements Serializable {
+    private String id;
     private InetAddress ip;
-    //Lista informacion compartida ??
+    private ArrayList<Pelicula> info;
 
-    public Usuario(int id, InetAddress ip){
+    public Usuario(String id, InetAddress ip, ArrayList<Pelicula> info){
         this.id = id;
         this.ip = ip;
+        this.info = info;
     }
 
-    public int getId(){
+    public String getId(){
         return id;
     }
 
     public InetAddress getIP(){
         return ip;
+    }
+
+    public ArrayList<Pelicula> getInfo(){
+        return info;
+    }
+
+    public void addInfo(Pelicula p){
+        info.add(p);
     }
 }
