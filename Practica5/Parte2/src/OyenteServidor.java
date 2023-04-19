@@ -23,15 +23,10 @@ public class OyenteServidor extends Thread{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        while(true){
+        boolean terminar = false;
+        while(!terminar){
             try {
                 m = (Mensaje) fin.readObject();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
             switch(m.getTipo()){
 
                 case M_CONF_CONEXION -> {
@@ -44,11 +39,22 @@ public class OyenteServidor extends Thread{
                     }
                 }
                 case M_EMITIR_FICHERO -> {
+
                 }
                 case M_PREPARADO_SC -> {
                 }
                 case M_CONF_CERRAR_CONEXION -> {
+                    System.out.println("Conexión cerrada con éxito");
+                    terminar = true;
                 }
+                case M_ERROR -> {
+                    System.out.println("Error en la conexión, no pudo procesarse la petición");
+                }
+            }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
         }
     }

@@ -1,7 +1,9 @@
-public class MenFich extends Mensaje{
+public class MenPedirFich extends Mensaje{
     private Pelicula p;
-    public MenFich(Pelicula p){
+    private Usuario usr;
+    public MenPedirFich(Pelicula p, Usuario usr){
         this.p = p;
+        this.usr = usr;
     }
     @Override
     public Tipos getTipo() {
@@ -20,5 +22,9 @@ public class MenFich extends Mensaje{
 
     public Pelicula getFichero(){
         return p;
+    }
+
+    public Usuario getUsr(){
+        return usr;
     }
 }

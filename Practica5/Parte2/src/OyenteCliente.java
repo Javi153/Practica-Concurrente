@@ -3,6 +3,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 public class OyenteCliente extends Thread{
@@ -25,7 +26,8 @@ public class OyenteCliente extends Thread{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        while(true){
+        boolean terminar = false;
+        while(!terminar){
             try {
                 Mensaje m = (Mensaje) fin.readObject();
                 switch(m.getTipo()){
@@ -41,6 +43,24 @@ public class OyenteCliente extends Thread{
                         fout.writeObject(aux);
                     }
                     case M_PEDIR_FICHERO -> {
+                        Random r = new Random();
+                        MenPedirFich maux = (MenPedirFich) m;
+                        Pelicula p = maux.getFichero();
+                        Usuario u = maux.getUsr();
+                        Usuario emisor = null;
+                        for(Usuario usr : tUsr){
+                            if(usr != u && usr.getInfo().contains(p)){
+                                emisor = usr;
+                                break;
+                            }
+                        }
+                        if(emisor != null){
+                            Flujo f = tSock.get(emisor.getId());
+                            f.getFout().writeObject(new MenEmitirFich(p, u, tSock.get(u.getId())));
+                        }
+                        else{
+                            fout.writeObject(new MenError());
+                        }
                     }
                     case M_PREPARADO_CS -> {
                     }
@@ -49,6 +69,7 @@ public class OyenteCliente extends Thread{
                         tUsr.remove(aux.getUsr());
                         tSock.remove(aux.getUsr().getId());
                         fout.writeObject(new MenConfCerrCon());
+                        terminar = true;
                     }
                 }
             } catch (IOException e) {

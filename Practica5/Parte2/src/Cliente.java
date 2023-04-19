@@ -31,7 +31,7 @@ public class Cliente {
             }
             switch(eleccion){
                 case 1 -> {foutC.writeObject(new MenList());}
-                case 2 -> {foutC.writeObject(new MenFich(new Pelicula(st)));}
+                case 2 -> {foutC.writeObject(new MenPedirFich(new Pelicula(st), usr));}
                 case 3 -> {foutC.writeObject(new MenCerrCon(usr));}
             }
         }
