@@ -2,11 +2,13 @@ public class MenEmitirFich extends Mensaje{
     private Pelicula p;
     private Usuario usr;
     private Flujo f;
+    private Puertos puertos;
 
-    public MenEmitirFich(Pelicula p, Usuario usr, Flujo f){
+    public MenEmitirFich(Pelicula p, Usuario usr, Flujo f, Puertos puertos){
         this.p = p;
         this.usr = usr;
         this.f = f;
+        this.puertos = puertos;
     }
 
     @Override
@@ -22,5 +24,13 @@ public class MenEmitirFich extends Mensaje{
     @Override
     public String getDestino() {
         return usr.getId();
+    }
+
+    public Pelicula getPelicula(){
+        return p;
+    }
+
+    public Puertos getPuertos(){
+        return puertos;
     }
 }

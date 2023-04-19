@@ -10,11 +10,13 @@ public class OyenteCliente extends Thread{
     Socket s;
     private final Set<Usuario> tUsr;
     private final Map<String, Flujo> tSock;
+    private Puertos puertos;
 
-    public OyenteCliente(Socket s, Set<Usuario> tUsr, Map<String, Flujo> tSock){
+    public OyenteCliente(Socket s, Set<Usuario> tUsr, Map<String, Flujo> tSock, Puertos puertos){
         this.s = s;
         this.tUsr = tUsr;
         this.tSock = tSock;
+        this.puertos = puertos;
     }
 
     public void run(){
@@ -56,13 +58,17 @@ public class OyenteCliente extends Thread{
                         }
                         if(emisor != null){
                             Flujo f = tSock.get(emisor.getId());
-                            f.getFout().writeObject(new MenEmitirFich(p, u, tSock.get(u.getId())));
+                            f.getFout().writeObject(new MenEmitirFich(p, u, tSock.get(u.getId()), puertos));
                         }
                         else{
                             fout.writeObject(new MenError());
                         }
                     }
                     case M_PREPARADO_CS -> {
+                        MenPrepCS maux = (MenPrepCS) m;
+                        Flujo f = tSock.get(maux.getDestino());
+                        ObjectOutputStream foutDest = f.getFout();
+                        foutDest.writeObject(new MenPrepSC(maux.getOrigen(), maux.getDestino(), maux.getIP(), maux.getPort()));
                     }
                     case M_CERRAR_CONEXION -> {
                         MenCerrCon aux = (MenCerrCon) m;

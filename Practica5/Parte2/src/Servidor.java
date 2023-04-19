@@ -9,10 +9,12 @@ import java.util.Set;
 public class Servidor {
     private static Set<Usuario> tUsr;
     private static Map<String, Flujo> tSock;
+    private static Puertos puertos;
 
     public Servidor(){
         tUsr = new HashSet<>();
         tSock = new HashMap<>();
+        puertos = new Puertos();
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -25,7 +27,7 @@ public class Servidor {
             tUsr.add(usr);
             Flujo f = new Flujo(usr.getId(), finS, foutS);
             tSock.add(f);*/
-            OyenteCliente o = new OyenteCliente(s, tUsr, tSock);
+            OyenteCliente o = new OyenteCliente(s, tUsr, tSock, puertos);
             o.start();
         }
     }

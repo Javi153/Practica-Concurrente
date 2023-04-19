@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
 
 public class OyenteServidor extends Thread{
@@ -34,14 +35,21 @@ public class OyenteServidor extends Thread{
                 }
                 case M_CONF_LISTA_USR -> {
                     MenConfList aux = (MenConfList) m;
-                    for(Usuario usr : aux.getLista()){
-                        System.out.println(usr.toString());
+                    for(Usuario u : aux.getLista()){
+                        System.out.println(u.toString());
                     }
                 }
                 case M_EMITIR_FICHERO -> {
-
+                    MenEmitirFich aux = (MenEmitirFich) m;
+                    int port = aux.getPuertos().getPort();
+                    Emisor e = new Emisor(aux.getPelicula(), port);
+                    e.start();
+                    fout.writeObject(new MenPrepCS(usr.getId(), aux.getDestino(), InetAddress.getLocalHost(),port));
                 }
                 case M_PREPARADO_SC -> {
+                    MenPrepSC maux = (MenPrepSC) m;
+                    Receptor r = new Receptor(maux.getIP(), maux.getPort(), usr);
+                    r.start();
                 }
                 case M_CONF_CERRAR_CONEXION -> {
                     System.out.println("Conexión cerrada con éxito");
