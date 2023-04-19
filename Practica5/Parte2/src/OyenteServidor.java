@@ -5,19 +5,28 @@ import java.net.Socket;
 
 public class OyenteServidor extends Thread{
     private Socket s;
-    public OyenteServidor(Socket s){
+    private Usuario usr;
+    public OyenteServidor(Socket s, Usuario usr){
         this.s = s;
+        this.usr = usr;
     }
 
     public void run(){
+        ObjectOutputStream fout;
+        ObjectInputStream fin;
+        Mensaje m;
+        try {
+            fout = new ObjectOutputStream(s.getOutputStream());
+            fin = new ObjectInputStream(s.getInputStream());
+            fout.writeObject(new MenCon(usr));
+            fout.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         while(true){
-            ObjectOutputStream fout;
-            ObjectInputStream fin;
-            Mensaje m;
             try {
-                fout = new ObjectOutputStream(s.getOutputStream());
-                fin = new ObjectInputStream(s.getInputStream());
-                m = (MensajeBasico) fin.readObject();
+                m = (Mensaje) fin.readObject();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (ClassNotFoundException e) {
@@ -25,23 +34,18 @@ public class OyenteServidor extends Thread{
             }
             switch(m.getTipo()){
 
-                case M_CONEXION -> {
-                }
                 case M_CONF_CONEXION -> {
-                }
-                case M_LISTA_USR -> {
+                    System.out.println("Conexión realizada con éxito");
                 }
                 case M_CONF_LISTA_USR -> {
-                }
-                case M_PEDIR_FICHERO -> {
+                    MenConfList aux = (MenConfList) m;
+                    for(Usuario usr : aux.getLista()){
+                        System.out.println(usr.toString());
+                    }
                 }
                 case M_EMITIR_FICHERO -> {
                 }
-                case M_PREPARADO_CS -> {
-                }
                 case M_PREPARADO_SC -> {
-                }
-                case M_CERRAR_CONEXION -> {
                 }
                 case M_CONF_CERRAR_CONEXION -> {
                 }
