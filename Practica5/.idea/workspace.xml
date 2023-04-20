@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a7b32986-74fb-4534-a0bf-7c0c426d4e21" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Practica-Concurrente.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte1/Parte1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Parte1/Parte1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte1/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte1/src/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte1/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte1/src/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/Parte2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/Parte2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Flujo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Flujo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenCerrCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenCerrCon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenCon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenConfCerrCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenConfCerrCon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenConfCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenConfCon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenConfList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenConfList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenEmitirFich.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenEmitirFich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenError.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenPedirFich.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenPedirFich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenPrepCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenPrepCS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenPrepSC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenPrepSC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Mensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Mensaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Pelicula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Puertos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Puertos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Tipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Tipos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte1/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte1/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte1/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte1/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte1/Entero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte1/Hilo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte1/Lock1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte2/Entero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte2/Hilo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte2/Lock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte2/LockBakery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte2/LockRompeEmpate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte2/LockTicket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte2/Main.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Ohj29jeSe2XBKHnLHmqCoVaDRY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.Cliente (1)">
+    <configuration name="Cliente (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cliente" />
+      <module name="Parte1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Cliente" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cliente" />
+      <module name="Parte2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Servidor (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servidor" />
+      <module name="Parte1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servidor" />
+      <module name="Parte2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Cliente (1)" />
+        <item itemvalue="Application.Servidor (1)" />
+        <item itemvalue="Application.Cliente" />
+        <item itemvalue="Application.Servidor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7b32986-74fb-4534-a0bf-7c0c426d4e21" name="Changes" comment="" />
+      <created>1682019499625</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682019499625</updated>
+    </task>
+    <servers />
+  </component>
+</project>

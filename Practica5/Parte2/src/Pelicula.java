@@ -1,4 +1,6 @@
-public class Pelicula {
+import java.io.Serializable;
+
+public class Pelicula implements Serializable {
     String nombre;
 
     public Pelicula(String nombre){

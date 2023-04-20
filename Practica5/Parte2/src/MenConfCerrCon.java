@@ -1,4 +1,6 @@
-public class MenConfCerrCon extends Mensaje{
+import java.io.Serializable;
+
+public class MenConfCerrCon extends Mensaje {
     @Override
     public Tipos getTipo() {
         return Tipos.M_CONF_CERRAR_CONEXION;

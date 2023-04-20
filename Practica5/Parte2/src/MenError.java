@@ -1,4 +1,6 @@
-public class MenError extends Mensaje{
+import java.io.Serializable;
+
+public class MenError extends Mensaje {
     @Override
     public Tipos getTipo() {
         return Tipos.M_ERROR;

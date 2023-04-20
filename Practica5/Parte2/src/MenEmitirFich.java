@@ -1,4 +1,6 @@
-public class MenEmitirFich extends Mensaje{
+import java.io.Serializable;
+
+public class MenEmitirFich extends Mensaje {
     private Pelicula p;
     private Usuario usr;
     private Flujo f;

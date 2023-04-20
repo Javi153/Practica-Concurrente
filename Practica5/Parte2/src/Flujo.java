@@ -1,7 +1,8 @@
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public class Flujo {
+public class Flujo implements Serializable {
     private ObjectInputStream fin;
     private ObjectOutputStream fout;
 

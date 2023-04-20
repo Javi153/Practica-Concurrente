@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.net.InetAddress;
 
-public class MenPrepSC extends Mensaje{
+public class MenPrepSC extends Mensaje {
     private String origen, destino;
     private InetAddress ip;
     private int port;

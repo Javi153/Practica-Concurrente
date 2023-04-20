@@ -1,4 +1,7 @@
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
@@ -11,24 +14,23 @@ public class Servidor {
     private static Map<String, Flujo> tSock;
     private static Puertos puertos;
 
-    public Servidor(){
+    public static void main(String[] args) throws IOException {
         tUsr = new HashSet<>();
         tSock = new HashMap<>();
         puertos = new Puertos();
-    }
-
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        ServerSocket serverS = new ServerSocket(999);
-        while (true) {
-            Socket s = serverS.accept();
-            /*ObjectInputStream finS = new ObjectInputStream(s.getInputStream());
-            ObjectOutputStream foutS = new ObjectOutputStream(s.getOutputStream());
-            Usuario usr = (Usuario) finS.readObject();
-            tUsr.add(usr);
-            Flujo f = new Flujo(usr.getId(), finS, foutS);
-            tSock.add(f);*/
-            OyenteCliente o = new OyenteCliente(s, tUsr, tSock, puertos);
-            o.start();
+        ServerSocket serverS = null;
+        try {
+            serverS = new ServerSocket(1025);
+            while (true) {
+                System.out.println("Servidor activo. Dirección IP: " + InetAddress.getLocalHost());
+                Socket s = serverS.accept();
+                OyenteCliente o = new OyenteCliente(s, tUsr, tSock, puertos);
+                o.start();
+            }
+        } catch (Exception e) {
+            System.out.println("Conexión interrumpida");
+            serverS.close();
+            throw new RuntimeException(e);
         }
     }
 }

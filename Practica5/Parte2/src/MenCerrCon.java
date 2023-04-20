@@ -1,4 +1,6 @@
-public class MenCerrCon extends Mensaje{
+import java.io.Serializable;
+
+public class MenCerrCon extends Mensaje {
     private Usuario usr;
 
     public MenCerrCon(Usuario usr){

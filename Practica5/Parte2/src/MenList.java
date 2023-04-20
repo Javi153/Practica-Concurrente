@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MenList extends Mensaje{
+public class MenList extends Mensaje implements Serializable{
 
     public MenList(){
     }

@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Puertos {
+public class Puertos implements Serializable {
     private final static int M = 16384;
     private final boolean puertos[] = new boolean[M];
 

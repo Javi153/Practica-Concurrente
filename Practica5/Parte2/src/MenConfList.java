@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Set;
 
-public class MenConfList extends Mensaje{
+public class MenConfList extends Mensaje implements Serializable{
     private Set<Usuario> tUsr;
 
     public MenConfList(Set<Usuario> tUsr){

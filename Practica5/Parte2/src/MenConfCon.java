@@ -1,4 +1,6 @@
-public class MenConfCon extends Mensaje{
+import java.io.Serializable;
+
+public class MenConfCon extends Mensaje {
     @Override
     public Tipos getTipo() {
         return Tipos.M_CONF_CONEXION;

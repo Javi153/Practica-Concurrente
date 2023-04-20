@@ -1,4 +1,6 @@
-public class MenPedirFich extends Mensaje{
+import java.io.Serializable;
+
+public class MenPedirFich extends Mensaje {
     private Pelicula p;
     private Usuario usr;
     public MenPedirFich(Pelicula p, Usuario usr){

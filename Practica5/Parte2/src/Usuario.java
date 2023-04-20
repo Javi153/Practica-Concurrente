@@ -30,7 +30,7 @@ public class Usuario implements Serializable {
     }
 
     public String toString(){
-        String s = "Usuario: " + id + ", IP: " + ip.toString() + "posee las siguientes películas:\n";
+        String s = "Usuario: " + id + ", IP: " + ip.toString() + " posee las siguientes películas:\n";
         for(Pelicula p : info){
             s = s.concat(p.toString() + "\n");
         }
