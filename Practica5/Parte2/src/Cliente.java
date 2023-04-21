@@ -4,6 +4,7 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -28,7 +29,11 @@ public class Cliente {
         ObjectOutputStream foutC = new ObjectOutputStream(s.getOutputStream());
         foutC.flush();
         ObjectInputStream finC = new ObjectInputStream(s.getInputStream());
-        Usuario usr = new Usuario(id_usr, ip, new HashSet<Pelicula>());
+        HashMap<String, Pelicula> hm = new HashMap<>();
+        for(int i = 1; i < 7; ++i){
+            hm.put("Star Wars Episodio " + i, new Pelicula("Star Wars Episodio " + i));
+        }
+        Usuario usr = new Usuario(id_usr, ip, hm);
         OyenteServidor o = new OyenteServidor(s, usr, finC, foutC);
         o.start();
         //menu
@@ -52,11 +57,11 @@ public class Cliente {
                 case 2 -> {
                     System.out.println("Inserte el nombre de la pelicula a descargar: ");
                     st = sc.nextLine();
-                    foutC.writeObject(new MenPedirFich(new Pelicula(st), usr));
+                    foutC.writeObject(new MenPedirFich(st, usr.getId()));
                 }
                 case 3 -> {
                     terminar = true;
-                    foutC.writeObject(new MenCerrCon(usr));
+                    foutC.writeObject(new MenCerrCon(usr.getId()));
                 }
             }
             eleccion = -1;

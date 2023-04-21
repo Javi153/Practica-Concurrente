@@ -5,41 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b32986-74fb-4534-a0bf-7c0c426d4e21" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Parte2/src/MenActUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/Practica-Concurrente.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte1/Parte1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Parte1/Parte1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte1/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte1/src/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte1/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte1/src/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/Parte2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/Parte2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/Flujo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Flujo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Emisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Emisor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/MenCerrCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenCerrCon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/MenCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenCon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/MenConfCerrCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenConfCerrCon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/MenConfCon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenConfCon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/MenConfList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenConfList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/MenEmitirFich.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenEmitirFich.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/MenError.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/MenList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/MenPedirFich.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenPedirFich.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/MenPrepCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenPrepCS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/MenPrepSC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenPrepSC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/Mensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Mensaje.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Pelicula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/Puertos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Puertos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Receptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Receptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Servidor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/Tipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Tipos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte1/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte1/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte1/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte1/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Emisor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Emisor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenCerrCon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenCerrCon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenConfList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenConfList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenEmitirFich.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenEmitirFich.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenPedirFich.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenPedirFich.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenPrepCS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenPrepCS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenPrepSC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenPrepSC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/OyenteCliente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/OyenteCliente$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/OyenteCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/OyenteCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/OyenteServidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/OyenteServidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Pelicula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Pelicula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Puertos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Puertos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Receptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Receptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Tipos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Tipos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte1/Entero.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte1/Hilo.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/Practica2/Parte1/Lock1.class" beforeDir="false" />
@@ -57,6 +62,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -72,7 +84,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Cliente (1)">
+  <component name="RunManager" selected="Application.Cliente">
     <configuration name="Cliente (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Cliente" />
       <module name="Parte1" />
@@ -103,10 +115,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Cliente (1)" />
-        <item itemvalue="Application.Servidor (1)" />
         <item itemvalue="Application.Cliente" />
         <item itemvalue="Application.Servidor" />
+        <item itemvalue="Application.Cliente (1)" />
+        <item itemvalue="Application.Servidor (1)" />
       </list>
     </recent_temporary>
   </component>

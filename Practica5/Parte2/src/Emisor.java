@@ -17,10 +17,12 @@ public class Emisor extends Thread{
         try {
             ServerSocket s = new ServerSocket(port);
             Socket sc = s.accept();
-            ObjectInputStream fin = new ObjectInputStream(sc.getInputStream());
             ObjectOutputStream fout = new ObjectOutputStream(sc.getOutputStream());
-            fout.writeObject(p);
             fout.flush();
+            ObjectInputStream fin = new ObjectInputStream(sc.getInputStream());
+            fout.writeObject(p);
+            fout.close();
+            fin.close();
             s.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -1,15 +1,12 @@
-import java.io.Serializable;
 
 public class MenEmitirFich extends Mensaje {
-    private Pelicula p;
-    private Usuario usr;
+    private String p, usr;
     private Flujo f;
-    private Puertos puertos;
+    private int puertos;
 
-    public MenEmitirFich(Pelicula p, Usuario usr, Flujo f, Puertos puertos){
+    public MenEmitirFich(String p, String usr, int puertos){
         this.p = p;
         this.usr = usr;
-        this.f = f;
         this.puertos = puertos;
     }
 
@@ -25,14 +22,14 @@ public class MenEmitirFich extends Mensaje {
 
     @Override
     public String getDestino() {
-        return usr.getId();
+        return usr;
     }
 
-    public Pelicula getPelicula(){
+    public String getPelicula(){
         return p;
     }
 
-    public Puertos getPuertos(){
+    public int getPuertos(){
         return puertos;
     }
 }

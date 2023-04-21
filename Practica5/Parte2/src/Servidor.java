@@ -10,26 +10,30 @@ import java.util.Map;
 import java.util.Set;
 
 public class Servidor {
-    private static Set<Usuario> tUsr;
+    private static Map<String, Usuario> tUsr;
     private static Map<String, Flujo> tSock;
+    private static Map<String,Pelicula> catalogo;
     private static Puertos puertos;
 
     public static void main(String[] args) throws IOException {
-        tUsr = new HashSet<>();
+        tUsr = new HashMap<>();
         tSock = new HashMap<>();
+        catalogo = new HashMap<>();
         puertos = new Puertos();
         ServerSocket serverS = null;
         try {
             serverS = new ServerSocket(1025);
             while (true) {
-                System.out.println("Servidor activo. Dirección IP: " + InetAddress.getLocalHost());
+                System.out.println("Servidor activo. Dirección IP: " + InetAddress.getLocalHost().getHostAddress());
                 Socket s = serverS.accept();
-                OyenteCliente o = new OyenteCliente(s, tUsr, tSock, puertos);
+                OyenteCliente o = new OyenteCliente(s, tUsr, tSock, catalogo, puertos);
                 o.start();
             }
         } catch (Exception e) {
             System.out.println("Conexión interrumpida");
-            serverS.close();
+            if(serverS != null) {
+                serverS.close();
+            }
             throw new RuntimeException(e);
         }
     }

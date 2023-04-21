@@ -1,9 +1,9 @@
 import java.io.Serializable;
 
 public class MenPedirFich extends Mensaje {
-    private Pelicula p;
-    private Usuario usr;
-    public MenPedirFich(Pelicula p, Usuario usr){
+    private String p;
+    private String usr;
+    public MenPedirFich(String p, String usr){
         this.p = p;
         this.usr = usr;
     }
@@ -14,7 +14,7 @@ public class MenPedirFich extends Mensaje {
 
     @Override
     public String getOrigen() {
-        return null;
+        return usr;
     }
 
     @Override
@@ -22,11 +22,7 @@ public class MenPedirFich extends Mensaje {
         return null;
     }
 
-    public Pelicula getFichero(){
+    public String getFichero(){
         return p;
-    }
-
-    public Usuario getUsr(){
-        return usr;
     }
 }

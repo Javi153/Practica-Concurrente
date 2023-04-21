@@ -2,11 +2,10 @@ import java.io.Serializable;
 import java.net.InetAddress;
 
 public class MenPrepCS extends Mensaje {
-    private String origen, destino;
-    private InetAddress ip;
+    private String origen, destino, ip;
     private int port;
 
-    public MenPrepCS(String origen, String destino, InetAddress ip, int port){
+    public MenPrepCS(String origen, String destino, String ip, int port){
         this.origen = origen;
         this.destino = destino;
         this.ip = ip;
@@ -28,7 +27,7 @@ public class MenPrepCS extends Mensaje {
         return destino;
     }
 
-    public InetAddress getIP(){
+    public String getIP(){
         return ip;
     }
 

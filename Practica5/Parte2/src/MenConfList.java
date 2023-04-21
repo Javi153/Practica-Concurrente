@@ -2,13 +2,13 @@ import java.io.Serializable;
 import java.util.Set;
 
 public class MenConfList extends Mensaje implements Serializable{
-    private Set<Usuario> tUsr;
+    private String tUsr;
 
-    public MenConfList(Set<Usuario> tUsr){
+    public MenConfList(String tUsr){
         this.tUsr = tUsr;
     }
 
-    public Set<Usuario> getLista(){
+    public String getLista(){
         return tUsr;
     }
 

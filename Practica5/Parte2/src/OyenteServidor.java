@@ -33,20 +33,17 @@ public class OyenteServidor extends Thread{
                     }
                     case M_CONF_LISTA_USR -> {
                         MenConfList aux = (MenConfList) m;
-                        for (Usuario u : aux.getLista()) {
-                            System.out.println(u.toString());
-                        }
+                        System.out.println(aux.getLista());
                     }
                     case M_EMITIR_FICHERO -> {
                         MenEmitirFich aux = (MenEmitirFich) m;
-                        int port = aux.getPuertos().getPort();
-                        Emisor e = new Emisor(aux.getPelicula(), port);
+                        Emisor e = new Emisor(usr.getInfo().get(aux.getPelicula()), aux.getPuertos());
                         e.start();
-                        fout.writeObject(new MenPrepCS(usr.getId(), aux.getDestino(), InetAddress.getLocalHost(), port));
+                        fout.writeObject(new MenPrepCS(usr.getId(), aux.getDestino(), InetAddress.getLocalHost().getHostAddress(), aux.getPuertos()));
                     }
                     case M_PREPARADO_SC -> {
                         MenPrepSC maux = (MenPrepSC) m;
-                        Receptor r = new Receptor(maux.getIP(), maux.getPort(), usr);
+                        Receptor r = new Receptor(maux.getIP(), maux.getPort(), usr, new Flujo(fin, fout));
                         r.start();
                     }
                     case M_CONF_CERRAR_CONEXION -> {

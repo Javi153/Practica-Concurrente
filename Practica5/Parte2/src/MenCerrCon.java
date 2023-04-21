@@ -1,9 +1,9 @@
 import java.io.Serializable;
 
 public class MenCerrCon extends Mensaje {
-    private Usuario usr;
+    private String usr;
 
-    public MenCerrCon(Usuario usr){
+    public MenCerrCon(String usr){
         this.usr = usr;
     }
     @Override
@@ -13,15 +13,11 @@ public class MenCerrCon extends Mensaje {
 
     @Override
     public String getOrigen() {
-        return null;
+        return usr;
     }
 
     @Override
     public String getDestino() {
         return null;
-    }
-
-    public Usuario getUsr(){
-        return usr;
     }
 }
