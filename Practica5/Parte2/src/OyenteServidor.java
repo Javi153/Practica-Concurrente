@@ -51,12 +51,11 @@ public class OyenteServidor extends Thread{
                         terminar = true;
                     }
                     case M_ERROR -> {
-                        System.out.println("Error en la conexión, no pudo procesarse la petición");
+                        MenError aux = (MenError) m;
+                        System.out.println(((MenError) m).getMen());
                     }
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }

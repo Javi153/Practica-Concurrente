@@ -54,20 +54,25 @@ public class OyenteCliente extends Thread{
                     case M_PEDIR_FICHERO -> {
                         MenPedirFich maux3 = (MenPedirFich) m;
                         String p = maux3.getFichero();
-                        String u = maux3.getOrigen();
-                        String emisor = null;
-                        for (String s : tUsr.keySet()) {
-                            if (!s.equals(u) && tUsr.get(s).getInfo().containsKey(p)) {
-                                emisor = s;
-                                break;
-                            }
+                        if(!catalogo.containsKey(p)){
+                            fout.writeObject(new MenError("Error al procesar la petición. La película seleccionada no forma parte del catálogo"));
                         }
-                        if (emisor != null) {
-                            Flujo f = tSock.get(emisor);
-                            int port = puertos.getPort();
-                            f.getFout().writeObject(new MenEmitirFich(p, u, port));
-                        } else {
-                            fout.writeObject(new MenError());
+                        else {
+                            String u = maux3.getOrigen();
+                            String emisor = null;
+                            for (String s : tUsr.keySet()) {
+                                if (!s.equals(u) && tUsr.get(s).getInfo().containsKey(p)) {
+                                    emisor = s;
+                                    break;
+                                }
+                            }
+                            if (emisor != null) {
+                                Flujo f = tSock.get(emisor);
+                                int port = puertos.getPort();
+                                f.getFout().writeObject(new MenEmitirFich(p, u, port));
+                            } else {
+                                fout.writeObject(new MenError("Error al procesar la petición. Ningún usuario en línea posee el material seleccionado"));
+                            }
                         }
                     }
                     case M_PREPARADO_CS -> {
