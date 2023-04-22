@@ -27,7 +27,12 @@ public class TablaUsuario {
         }
         nw++;
         l.unlock();
-        tabla.put(s, t);
+        if(!remove){
+            tabla.put(s, t);
+        }
+        else{
+            tabla.remove(s);
+        }
         l.lock();
         nw--;
         OKWrite.signal();

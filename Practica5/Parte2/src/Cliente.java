@@ -45,6 +45,7 @@ public class Cliente {
             System.out.println("1. Mostrar lista de usuarios disponibles");
             System.out.println("2. Pedir una pelicula");
             System.out.println("3. Salir");
+            l.releaseLock(0);
             while(eleccion < 1 || eleccion > 3){
                 eleccion = sc.nextInt();
                 sc.nextLine();
@@ -54,7 +55,9 @@ public class Cliente {
                     foutC.writeObject(new MenList());
                 }
                 case 2 -> {
+                    l.takeLock(0);
                     System.out.println("Inserte el nombre de la pelicula a descargar: ");
+                    l.releaseLock(0);
                     st = sc.nextLine();
                     foutC.writeObject(new MenPedirFich(st, usr.getId()));
                 }
@@ -63,7 +66,6 @@ public class Cliente {
                     foutC.writeObject(new MenCerrCon(usr.getId()));
                 }
             }
-            l.releaseLock(0);
             eleccion = -1;
         }
         o.join();
