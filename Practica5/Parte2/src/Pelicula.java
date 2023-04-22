@@ -7,6 +7,10 @@ public class Pelicula implements Serializable {
         this.nombre = nombre;
     }
 
+    public Pelicula(Pelicula p){
+        this.nombre = String.copyValueOf(p.getName().toCharArray());
+    }
+
     public String getName(){
         return nombre;
     }

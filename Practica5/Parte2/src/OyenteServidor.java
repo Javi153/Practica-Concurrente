@@ -9,11 +9,13 @@ public class OyenteServidor extends Thread{
     private Usuario usr;
     private ObjectInputStream fin;
     private ObjectOutputStream fout;
-    public OyenteServidor(Socket s, Usuario usr, ObjectInputStream fin, ObjectOutputStream fout){
+    private miLock l;
+    public OyenteServidor(Socket s, Usuario usr, ObjectInputStream fin, ObjectOutputStream fout, miLock l){
         this.s = s;
         this.usr = usr;
         this.fin = fin;
         this.fout = fout;
+        this.l = l;
     }
 
     public void run(){
@@ -27,7 +29,9 @@ public class OyenteServidor extends Thread{
         while(!terminar){
             try {
                 m = (Mensaje) fin.readObject();
+                l.takeLock(1);
                 switch (m.getTipo()) {
+
                     case M_CONF_CONEXION -> {
                         System.out.println("Conexión realizada con éxito");
                     }
@@ -37,6 +41,7 @@ public class OyenteServidor extends Thread{
                     }
                     case M_EMITIR_FICHERO -> {
                         MenEmitirFich aux = (MenEmitirFich) m;
+                        System.out.println("Emitiendo fichero " + aux.getPelicula());
                         Emisor e = new Emisor(usr.getInfo().get(aux.getPelicula()), aux.getPuertos());
                         e.start();
                         fout.writeObject(new MenPrepCS(usr.getId(), aux.getDestino(), InetAddress.getLocalHost().getHostAddress(), aux.getPuertos()));
@@ -52,9 +57,10 @@ public class OyenteServidor extends Thread{
                     }
                     case M_ERROR -> {
                         MenError aux = (MenError) m;
-                        System.out.println(((MenError) m).getMen());
+                        System.out.println(aux.getMen());
                     }
                 }
+                l.releaseLock(1);
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }

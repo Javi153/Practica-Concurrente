@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -12,6 +13,19 @@ public class Usuario implements Serializable {
         this.id = id;
         this.ip = ip;
         this.info = info;
+    }
+
+    public Usuario(Usuario u) {
+        this.id = new String(u.getId());
+        try {
+            this.ip = InetAddress.getByName(new String(u.getIP().getHostAddress().toCharArray()));
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
+        }
+        this.info = new HashMap<>();
+        for(Pelicula p : u.getInfo().values()){
+            this.info.put(p.getName(), new Pelicula(p));
+        }
     }
 
     public String getId(){

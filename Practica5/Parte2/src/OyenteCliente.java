@@ -2,18 +2,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 
 public class OyenteCliente extends Thread{
     private Socket s;
-    private Map<String, Usuario> tUsr;
-    private Map<String, Flujo> tSock;
-    private Map<String, Pelicula> catalogo;
+    private TablaUsuario tUsr;
+    private TablaFlujo tSock;
+    private Catalogo catalogo;
     private Puertos puertos;
 
-    public OyenteCliente(Socket s, Map<String, Usuario> tUsr, Map<String, Flujo> tSock, Map<String, Pelicula> catalogo, Puertos puertos){
+    public OyenteCliente(Socket s, TablaUsuario tUsr, TablaFlujo tSock, Catalogo catalogo, Puertos puertos){
         this.s = s;
         this.tUsr = tUsr;
         this.tSock = tSock;
@@ -37,16 +34,16 @@ public class OyenteCliente extends Thread{
                 switch (m.getTipo()) {
                     case M_CONEXION -> {
                         MenCon aux1 = (MenCon) m;
-                        tUsr.put(aux1.getUsr().getId(), aux1.getUsr());
-                        tSock.put(aux1.getUsr().getId(), new Flujo(fin, fout));
+                        tUsr.write(aux1.getUsr().getId(), aux1.getUsr());
+                        tSock.write(aux1.getUsr().getId(), new Flujo(fin, fout));
                         for(Pelicula p : aux1.getUsr().getInfo().values()){
-                            catalogo.put(p.getName(), p);
+                            catalogo.write(p);
                         }
                         fout.writeObject(new MenConfCon());
                     }
                     case M_LISTA_USR -> {
                         String s = "Lista de usuarios conectados: \n";
-                        for (Usuario u : tUsr.values()) {
+                        for (Usuario u : tUsr.valores()) {
                             s = s.concat(u.toString());
                         }
                         fout.writeObject(new MenConfList(s));
@@ -54,20 +51,20 @@ public class OyenteCliente extends Thread{
                     case M_PEDIR_FICHERO -> {
                         MenPedirFich maux3 = (MenPedirFich) m;
                         String p = maux3.getFichero();
-                        if(!catalogo.containsKey(p)){
+                        if(catalogo.read(p) == null){
                             fout.writeObject(new MenError("Error al procesar la petición. La película seleccionada no forma parte del catálogo"));
                         }
                         else {
                             String u = maux3.getOrigen();
                             String emisor = null;
-                            for (String s : tUsr.keySet()) {
-                                if (!s.equals(u) && tUsr.get(s).getInfo().containsKey(p)) {
+                            for (String s : tUsr.claves()) {
+                                if (!s.equals(u) && tUsr.read(s).getInfo().containsKey(p)) {
                                     emisor = s;
                                     break;
                                 }
                             }
                             if (emisor != null) {
-                                Flujo f = tSock.get(emisor);
+                                Flujo f = tSock.read(emisor);
                                 int port = puertos.getPort();
                                 f.getFout().writeObject(new MenEmitirFich(p, u, port));
                             } else {
@@ -77,14 +74,16 @@ public class OyenteCliente extends Thread{
                     }
                     case M_PREPARADO_CS -> {
                         MenPrepCS maux = (MenPrepCS) m;
-                        Flujo f = tSock.get(maux.getDestino());
+                        Flujo f = tSock.read(maux.getDestino());
                         ObjectOutputStream foutDest = f.getFout();
                         foutDest.writeObject(new MenPrepSC(maux.getOrigen(), maux.getDestino(), maux.getIP(), maux.getPort()));
                     }
                     case M_ACT_USUARIO -> {
                         MenActUsuario aux = (MenActUsuario) m;
-                        Pelicula p = catalogo.get(aux.getPelicula());
-                        tUsr.get(aux.getOrigen()).addInfo(p);
+                        Pelicula p = catalogo.read(aux.getPelicula());
+                        Usuario uaux = tUsr.read(aux.getOrigen());
+                        uaux.addInfo(p);
+                        tUsr.write(aux.getOrigen(), uaux);
                         puertos.closePort(aux.getPort());
                     }
                     case M_CERRAR_CONEXION -> {

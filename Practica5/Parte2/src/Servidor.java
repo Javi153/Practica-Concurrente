@@ -1,24 +1,18 @@
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 public class Servidor {
-    private static Map<String, Usuario> tUsr;
-    private static Map<String, Flujo> tSock;
-    private static Map<String,Pelicula> catalogo;
+    private static TablaUsuario tUsr;
+    private static TablaFlujo tSock;
+    private static Catalogo catalogo;
     private static Puertos puertos;
 
     public static void main(String[] args) throws IOException {
-        tUsr = new HashMap<>();
-        tSock = new HashMap<>();
-        catalogo = new HashMap<>();
+        tUsr = new TablaUsuario();
+        tSock = new TablaFlujo();
+        catalogo = new Catalogo();
         puertos = new Puertos();
         ServerSocket serverS = null;
         try {

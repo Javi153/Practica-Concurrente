@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b32986-74fb-4534-a0bf-7c0c426d4e21" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parte2/src/Catalogo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parte2/src/TablaFlujo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parte2/src/TablaUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/MenError.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Pelicula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +41,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/Universidad/Cuarto/Programacion Concurrente/Practica-Concurrente/Practica2"
+    "last_opened_file_path": "F:/Universidad/Cuarto/Programacion Concurrente/Practica-Concurrente/Practica5"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Cliente">

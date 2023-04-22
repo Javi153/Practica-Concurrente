@@ -5,7 +5,6 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class Cliente {
@@ -14,7 +13,7 @@ public class Cliente {
 
     static {
         try {
-            serverIP = InetAddress.getByName("192.168.56.1");
+            serverIP = InetAddress.getByName("172.25.240.1");
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         }
@@ -30,11 +29,10 @@ public class Cliente {
         foutC.flush();
         ObjectInputStream finC = new ObjectInputStream(s.getInputStream());
         HashMap<String, Pelicula> hm = new HashMap<>();
-        for(int i = 1; i < 7; ++i){
-            hm.put("Star Wars Episodio " + i, new Pelicula("Star Wars Episodio " + i));
-        }
+        hm.put("Interstellar", new Pelicula("Interstellar"));
         Usuario usr = new Usuario(id_usr, ip, hm);
-        OyenteServidor o = new OyenteServidor(s, usr, finC, foutC);
+        miLock l = new miLockTicket(2);
+        OyenteServidor o = new OyenteServidor(s, usr, finC, foutC, l);
         o.start();
         //menu
         boolean terminar = false;
@@ -42,6 +40,7 @@ public class Cliente {
         String st = "";
         try{
         while(!terminar){
+            l.takeLock(0);
             System.out.println("Elija entre las siguientes opciones escribiendo el numero correspondiente: ");
             System.out.println("1. Mostrar lista de usuarios disponibles");
             System.out.println("2. Pedir una pelicula");
@@ -64,6 +63,7 @@ public class Cliente {
                     foutC.writeObject(new MenCerrCon(usr.getId()));
                 }
             }
+            l.releaseLock(0);
             eleccion = -1;
         }
         o.join();
