@@ -75,7 +75,12 @@ public class Catalogo {
         else{
             e.release();
         }
-        Pelicula aux = new Pelicula(catalogo.get(s));
+        Pelicula aux = catalogo.get(s);
+        Pelicula res;
+        if(aux == null)
+            res = null;
+        else
+            res = new Pelicula(aux);
         try {
             e.acquire();
         } catch (InterruptedException ex) {
@@ -89,6 +94,6 @@ public class Catalogo {
         else{
             e.release();
         }
-        return aux;
+        return res;
     }
 }

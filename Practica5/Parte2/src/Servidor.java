@@ -17,9 +17,11 @@ public class Servidor {
         ServerSocket serverS = null;
         try {
             serverS = new ServerSocket(1025);
+            System.out.println("Servidor activo. Dirección IP: " + InetAddress.getLocalHost().getHostAddress());
             while (true) {
-                System.out.println("Servidor activo. Dirección IP: " + InetAddress.getLocalHost().getHostAddress());
+                System.out.println("Esperando nueva conexión...");
                 Socket s = serverS.accept();
+                System.out.println("Conexión establecida con " + s.getInetAddress().getHostAddress());
                 OyenteCliente o = new OyenteCliente(s, tUsr, tSock, catalogo, puertos);
                 o.start();
             }

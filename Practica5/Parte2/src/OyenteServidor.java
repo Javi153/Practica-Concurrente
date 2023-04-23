@@ -9,13 +9,14 @@ public class OyenteServidor extends Thread{
     private Usuario usr;
     private ObjectInputStream fin;
     private ObjectOutputStream fout;
-    private miLock l;
+    private miLock l, lusr;
     public OyenteServidor(Socket s, Usuario usr, ObjectInputStream fin, ObjectOutputStream fout, miLock l){
         this.s = s;
         this.usr = usr;
         this.fin = fin;
         this.fout = fout;
         this.l = l;
+        this.lusr = new miLockTicket(1000);
     }
 
     public void run(){
@@ -44,10 +45,11 @@ public class OyenteServidor extends Thread{
                         System.out.println("Emitiendo fichero " + aux.getPelicula());
                         Emisor e = new Emisor(usr.getInfo().get(aux.getPelicula()), aux.getPuertos());
                         e.start();
-                        fout.writeObject(new MenPrepCS(usr.getId(), aux.getDestino(), InetAddress.getLocalHost().getHostAddress(), aux.getPuertos()));
+                        fout.writeObject(new MenPrepCS(usr.getId(), aux.getDestino(), InetAddress.getLocalHost().getHostAddress(), aux.getPelicula(), aux.getPuertos()));
                     }
                     case M_PREPARADO_SC -> {
                         MenPrepSC maux = (MenPrepSC) m;
+                        System.out.println("Recibiendo el fichero " + maux.getPelicula() + " de " + maux.getOrigen());
                         Receptor r = new Receptor(maux.getIP(), maux.getPort(), usr, new Flujo(fin, fout));
                         r.start();
                     }

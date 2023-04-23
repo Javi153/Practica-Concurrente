@@ -76,7 +76,7 @@ public class OyenteCliente extends Thread{
                         MenPrepCS maux = (MenPrepCS) m;
                         Flujo f = tSock.read(maux.getDestino());
                         ObjectOutputStream foutDest = f.getFout();
-                        foutDest.writeObject(new MenPrepSC(maux.getOrigen(), maux.getDestino(), maux.getIP(), maux.getPort()));
+                        foutDest.writeObject(new MenPrepSC(maux.getOrigen(), maux.getDestino(), maux.getIP(), maux.getPelicula(), maux.getPort()));
                     }
                     case M_ACT_USUARIO -> {
                         MenActUsuario aux = (MenActUsuario) m;

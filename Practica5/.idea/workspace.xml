@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a7b32986-74fb-4534-a0bf-7c0c426d4e21" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Catalogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Catalogo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenPrepCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenPrepCS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/MenPrepSC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/MenPrepSC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/TablaFlujo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/TablaFlujo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/TablaUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/TablaUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

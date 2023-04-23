@@ -29,27 +29,33 @@ public class Cliente {
         foutC.flush();
         ObjectInputStream finC = new ObjectInputStream(s.getInputStream());
         HashMap<String, Pelicula> hm = new HashMap<>();
-        hm.put("Interstellar", new Pelicula("Interstellar"));
+        hm.put("Star Wars", new Pelicula("Star Wars"));
         Usuario usr = new Usuario(id_usr, ip, hm);
         miLock l = new miLockTicket(2);
         OyenteServidor o = new OyenteServidor(s, usr, finC, foutC, l);
         o.start();
-        //menu
         boolean terminar = false;
-        int eleccion = -1;
+        int eleccion;
         String st = "";
         try{
         while(!terminar){
             l.takeLock(0);
+            System.out.println("=================P2P MOVIESHARE========================");
             System.out.println("Elija entre las siguientes opciones escribiendo el numero correspondiente: ");
-            System.out.println("1. Mostrar lista de usuarios disponibles");
-            System.out.println("2. Pedir una pelicula");
-            System.out.println("3. Salir");
+            System.out.println("    1. Mostrar lista de usuarios disponibles");
+            System.out.println("    2. Pedir una pelicula");
+            System.out.println("    3. Salir");
+            System.out.println("=======================================================");
             l.releaseLock(0);
-            while(eleccion < 1 || eleccion > 3){
+            do{
+                l.takeLock(0);
+                System.out.println("Opción elegida(1,2,3): ");
                 eleccion = sc.nextInt();
                 sc.nextLine();
-            }
+                if(eleccion < 1 || eleccion > 3)
+                    System.out.println("Opción incorrecta, vuelva a intentarlo");
+                l.releaseLock(0);
+            }while(eleccion < 1 || eleccion > 3);
             switch (eleccion) {
                 case 1 -> {
                     foutC.writeObject(new MenList());
@@ -66,7 +72,12 @@ public class Cliente {
                     foutC.writeObject(new MenCerrCon(usr.getId()));
                 }
             }
-            eleccion = -1;
+            try{
+                Thread.sleep(500);
+            }
+            catch(InterruptedException e){
+                System.out.println("Cliente interrumpido");
+            }
         }
         o.join();
         } catch (Exception e) {

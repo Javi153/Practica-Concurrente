@@ -28,23 +28,23 @@ public class Usuario implements Serializable {
         }
     }
 
-    public String getId(){
+    public synchronized String getId(){
         return id;
     }
 
-    public InetAddress getIP(){
+    public synchronized InetAddress getIP(){
         return ip;
     }
 
-    public HashMap<String, Pelicula> getInfo(){
+    public synchronized HashMap<String, Pelicula> getInfo(){
         return info;
     }
 
-    public void addInfo(Pelicula p){
+    public synchronized void addInfo(Pelicula p){
         info.put(p.getName(), p);
     }
 
-    public String toString(){
+    public synchronized String toString(){
         String s = "Usuario: " + id + ", IP: " + ip.toString() + " posee las siguientes películas:\n";
         for(Pelicula p : info.values()){
             s = s.concat(p.toString() + "\n");
