@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Scanner;
-
+//Practica realizada por Javier Jimenez Arenas
 public class Cliente {
 
     private final static InetAddress serverIP;

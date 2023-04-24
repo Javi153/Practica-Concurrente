@@ -18,7 +18,7 @@ public class Usuario implements Serializable { //Clase usuario con su IP y su li
     public Usuario(Usuario u) { //Constructor de deep copy para evitar problemas de concurrencia
         this.id = new String(u.getId());
         try {
-            this.ip = InetAddress.getByName(new String(u.getIP().getHostAddress().toCharArray()));
+            this.ip = InetAddress.getByName(new String(u.getIP().getHostAddress()));
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         }

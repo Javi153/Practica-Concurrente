@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-
+//Practica realizada por Javier Jimenez Arenas
 public class Servidor {
     private static TablaUsuario tUsr;
     private static TablaFlujo tSock;
