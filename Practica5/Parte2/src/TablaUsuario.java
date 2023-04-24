@@ -10,13 +10,13 @@ public class TablaUsuario {
     private final Condition OKread = l.newCondition(), OKWrite = l.newCondition();
     private int nw, nr;
 
-    public TablaUsuario(){
+    public TablaUsuario(){ //Tabla de usuarios con lista de peliculas implementado como monitor con Lock y Condicional
         tabla = new HashMap<>();
         nw = 0;
         nr = 0;
     }
 
-    public void write(String s, Usuario t, boolean remove){
+    public void write(String s, Usuario t, boolean remove){ //Implementamos el write para que sirva tanto para añadir pelicula como para borrarla
         l.lock();
         while(nw > 0 || nr > 0){
             try {
@@ -42,11 +42,11 @@ public class TablaUsuario {
 
     public void write(String s, Usuario t){
         write(s, t, false);
-    }
+    } //Si no se especifica se entiende que se añade
 
     public void remove(String s){
         write(s, null, true);
-    }
+    } //Añadimos facilidad al usuario renombrando el write/remove:true como remove
 
     public Usuario read(String s) {
         l.lock();

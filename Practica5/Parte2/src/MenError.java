@@ -6,6 +6,7 @@ public class MenError extends Mensaje {
     public MenError(String s){
         men = s;
     }
+    //Mensaje de error si no se encuentra la pelicula que se solicitaba
     @Override
     public Tipos getTipo() {
         return Tipos.M_ERROR;

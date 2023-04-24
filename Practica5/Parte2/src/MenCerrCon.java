@@ -5,7 +5,7 @@ public class MenCerrCon extends Mensaje {
 
     public MenCerrCon(String usr){
         this.usr = usr;
-    }
+    } //Mensaje de solicitud de cierre de conexion
     @Override
     public Tipos getTipo() {
         return Tipos.M_CERRAR_CONEXION;

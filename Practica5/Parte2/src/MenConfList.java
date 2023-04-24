@@ -6,7 +6,7 @@ public class MenConfList extends Mensaje implements Serializable{
 
     public MenConfList(String tUsr){
         this.tUsr = tUsr;
-    }
+    } //Mensaje de confirmacion de paso de lista de usuarios destinada al cliente
 
     public String getLista(){
         return tUsr;

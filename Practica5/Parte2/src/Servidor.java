@@ -9,7 +9,7 @@ public class Servidor {
     private static Catalogo catalogo;
     private static Puertos puertos;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { //El servidor simplemente crea las tablas de informacion necesaria y espera nuevas conexiones indefinidamente
         tUsr = new TablaUsuario();
         tSock = new TablaFlujo();
         catalogo = new Catalogo();

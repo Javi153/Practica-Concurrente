@@ -15,15 +15,15 @@ public class Emisor extends Thread{
 
     public void run(){
         try {
-            ServerSocket s = new ServerSocket(port);
+            ServerSocket s = new ServerSocket(port); //Creamos el socket servidor para emitir la pelicula
             Socket sc = s.accept();
             ObjectOutputStream fout = new ObjectOutputStream(sc.getOutputStream());
             fout.flush();
-            ObjectInputStream fin = new ObjectInputStream(sc.getInputStream());
-            fout.writeObject(p);
+            ObjectInputStream fin = new ObjectInputStream(sc.getInputStream()); //Creamos entrada y salida
+            fout.writeObject(p); //Escribimos la pelicula cuando se haya conectado
             fout.close();
             fin.close();
-            s.close();
+            s.close(); //Cerramos flujos y servidor
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

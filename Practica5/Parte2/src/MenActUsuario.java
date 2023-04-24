@@ -2,7 +2,7 @@ public class MenActUsuario extends Mensaje{
     private String usr, p;
     private int port;
 
-    public MenActUsuario(String usr, String p, int port){
+    public MenActUsuario(String usr, String p, int port){ //Mensaje para actualizar la lista de peliculas del cliente en el servidor
         this.usr = usr;
         this.p = p;
         this.port = port;
@@ -28,5 +28,5 @@ public class MenActUsuario extends Mensaje{
 
     public int getPort(){
         return port;
-    }
+    } //Transporta el puerto de conexion
 }

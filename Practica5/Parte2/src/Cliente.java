@@ -22,24 +22,24 @@ public class Cliente {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Inserte su nombre de usuario: ");
-        String id_usr = sc.nextLine();
-        InetAddress ip = InetAddress.getLocalHost();
-        Socket s = new Socket(serverIP, 1025);
-        ObjectOutputStream foutC = new ObjectOutputStream(s.getOutputStream());
+        String id_usr = sc.nextLine(); //Guardamos el nombre de usuario, supondremos que todos son distintos sin comprobarlo
+        InetAddress ip = InetAddress.getLocalHost(); //Guardamos la IP del cliente
+        Socket s = new Socket(serverIP, 1025); //Establecemos conexion con el servidor
+        ObjectOutputStream foutC = new ObjectOutputStream(s.getOutputStream()); //Creamos flujo de salida
         foutC.flush();
-        ObjectInputStream finC = new ObjectInputStream(s.getInputStream());
-        HashMap<String, Pelicula> hm = new HashMap<>();
+        ObjectInputStream finC = new ObjectInputStream(s.getInputStream()); //Creamos flujo de entrada
+        HashMap<String, Pelicula> hm = new HashMap<>(); //Lista de peliculas que tiene el cliente
         hm.put("Star Wars", new Pelicula("Star Wars"));
-        Usuario usr = new Usuario(id_usr, ip, hm);
-        miLock l = new miLockTicket(2);
-        OyenteServidor o = new OyenteServidor(s, usr, finC, foutC, l);
+        Usuario usr = new Usuario(id_usr, ip, hm); //Creamos el usuario con la informacion que tenemos
+        miLock l = new miLockTicket(2); //Crearemos un lock para agrupar los println por bloques
+        OyenteServidor o = new OyenteServidor(usr, finC, foutC, l);
         o.start();
         boolean terminar = false;
         int eleccion;
         String st = "";
         try{
-        while(!terminar){
-            l.takeLock(0);
+        while(!terminar){ //menu
+            l.takeLock(0);//tomamos el lock para que no se entrelacen lineas de texto en el menu
             System.out.println("=================P2P MOVIESHARE========================");
             System.out.println("Elija entre las siguientes opciones escribiendo el numero correspondiente: ");
             System.out.println("    1. Mostrar lista de usuarios disponibles");
@@ -48,7 +48,7 @@ public class Cliente {
             System.out.println("=======================================================");
             l.releaseLock(0);
             do{
-                l.takeLock(0);
+                l.takeLock(0); //Tambien esperamos a q el usuario escriba la opcion correctamente
                 System.out.println("Opción elegida(1,2,3): ");
                 eleccion = sc.nextInt();
                 sc.nextLine();
@@ -58,22 +58,24 @@ public class Cliente {
             }while(eleccion < 1 || eleccion > 3);
             switch (eleccion) {
                 case 1 -> {
-                    foutC.writeObject(new MenList());
+                    foutC.writeObject(new MenList()); //Pedimos la lista de usuarios y sus peliculas
                 }
                 case 2 -> {
                     l.takeLock(0);
-                    System.out.println("Inserte el nombre de la pelicula a descargar: ");
+                    System.out.println("Inserte el nombre de la pelicula a descargar: "); //Supondremos que el usuario pedira una pelicula que no tuviese antes
+                                                                                          //En caso contrario se abrirá la conexión y se actualizará su película
+                                                                                          //siempre que sea posible
                     l.releaseLock(0);
                     st = sc.nextLine();
-                    foutC.writeObject(new MenPedirFich(st, usr.getId()));
+                    foutC.writeObject(new MenPedirFich(st, usr.getId())); //Pedimos la pelicula especificada
                 }
                 case 3 -> {
                     terminar = true;
-                    foutC.writeObject(new MenCerrCon(usr.getId()));
+                    foutC.writeObject(new MenCerrCon(usr.getId())); //Mandamos mensaje de cierre de conexion
                 }
             }
             try{
-                Thread.sleep(500);
+                Thread.sleep(500); //Hacemos que el menu espere medio segundo por posible respuesta del oyenteservidor
             }
             catch(InterruptedException e){
                 System.out.println("Cliente interrumpido");
@@ -85,6 +87,6 @@ public class Cliente {
         }
         finC.close();
         foutC.close();
-        s.close();
+        s.close(); //Cerramos flujo y socket
     }
 }

@@ -5,6 +5,8 @@ public class miLockTicket extends miLock {
     AtomicInteger number;
     private Entero turn[];
 
+    //Implementacion de lock ticket como se especifico en clase con AtomicInteger
+
     public miLockTicket(int len){
         number = new AtomicInteger(1);
         next = 1;

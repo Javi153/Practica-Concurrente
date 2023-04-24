@@ -5,7 +5,7 @@ public class MenCon extends Mensaje {
 
     public MenCon(Usuario usr){
         this.usr = usr;
-    }
+    } //Mensaje de solicitud de inicio de conexion
     @Override
     public Tipos getTipo() {
         return Tipos.M_CONEXION;

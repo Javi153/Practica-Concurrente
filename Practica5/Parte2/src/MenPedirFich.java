@@ -7,6 +7,7 @@ public class MenPedirFich extends Mensaje {
         this.p = p;
         this.usr = usr;
     }
+    //Mensaje de solicitud de pelicula
     @Override
     public Tipos getTipo() {
         return Tipos.M_PEDIR_FICHERO;

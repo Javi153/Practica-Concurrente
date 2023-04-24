@@ -12,6 +12,7 @@ public class MenPrepSC extends Mensaje {
         this.peli = peli;
         this.port = port;
     }
+    //Mensaje del servidor que indica al receptor que esta listo
 
     @Override
     public Tipos getTipo() {

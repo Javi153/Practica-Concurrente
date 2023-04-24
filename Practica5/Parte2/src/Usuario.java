@@ -4,7 +4,7 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Usuario implements Serializable {
+public class Usuario implements Serializable { //Clase usuario con su IP y su lista de peliculas
     private String id;
     private InetAddress ip;
     private HashMap<String, Pelicula> info;
@@ -15,7 +15,7 @@ public class Usuario implements Serializable {
         this.info = info;
     }
 
-    public Usuario(Usuario u) {
+    public Usuario(Usuario u) { //Constructor de deep copy para evitar problemas de concurrencia
         this.id = new String(u.getId());
         try {
             this.ip = InetAddress.getByName(new String(u.getIP().getHostAddress().toCharArray()));

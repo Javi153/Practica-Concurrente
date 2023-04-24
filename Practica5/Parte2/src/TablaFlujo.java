@@ -9,13 +9,13 @@ public class TablaFlujo {
     private final Condition OKread = l.newCondition(), OKWrite = l.newCondition();
     private int nw, nr;
 
-    public TablaFlujo(){
+    public TablaFlujo(){ //Tabla de flujos de usuario implementada como monitor con Lock y Condcional
         tabla = new HashMap<>();
         nw = 0;
         nr = 0;
     }
 
-    public void write(String s, Flujo t, boolean remove){
+    public void write(String s, Flujo t, boolean remove){ //Implementamos el write para que sirva tanto para añadir flujo como para borrarlo
         l.lock();
         while(nw > 0 || nr > 0){
             try {
@@ -41,11 +41,11 @@ public class TablaFlujo {
 
     public void write(String s, Flujo t){
         write(s, t, false);
-    }
+    } //Si no se especifica se entiende que se añade
 
     public void remove(String s){
         write(s, null, true);
-    }
+    } //Añadimos facilidad al usuario renombrando el write/remove:true como remove
 
     public Flujo read(String s) {
         l.lock();

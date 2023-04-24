@@ -7,7 +7,8 @@ public class Catalogo {
     private int nw, nr, dw, dr;
     private Semaphore e,r,w;
 
-    public Catalogo() {
+    public Catalogo() { //Implementacion readers-writers con semaforos vista en clase para el acceso concurrente
+                        //al catalogo de peliculas del servidor
         catalogo = new HashMap<>();
         nw = 0;
         nr = 0;

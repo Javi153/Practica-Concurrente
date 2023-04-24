@@ -8,7 +8,7 @@ public class MenEmitirFich extends Mensaje {
         this.p = p;
         this.usr = usr;
         this.puertos = puertos;
-    }
+    } //Mensaje para que un cliente emita un fichero
 
     @Override
     public Tipos getTipo() {

@@ -1,5 +1,5 @@
 
-public class Entero {
+public class Entero { //Implementacion de entero volatil para el Lock
     private volatile int n;
 
     public Entero(){
