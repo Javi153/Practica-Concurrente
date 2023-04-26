@@ -1,100 +1,30 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Semaphore;
 
-public class Catalogo {
+public class Catalogo extends MonitorSem {
     private Map<String, Pelicula> catalogo;
-    private int nw, nr, dw, dr;
-    private Semaphore e,r,w;
 
     public Catalogo() { //Implementacion readers-writers con semaforos vista en clase para el acceso concurrente
                         //al catalogo de peliculas del servidor
+        super();
         catalogo = new HashMap<>();
-        nw = 0;
-        nr = 0;
-        dw = 0;
-        dr = 0;
-        e = new Semaphore(1, true);
-        r = new Semaphore(0, true);
-        w = new Semaphore(0, true);
     }
 
     public void write(Pelicula p) {
-        try {
-            e.acquire();
-        } catch (InterruptedException ex) {
-            throw new RuntimeException(ex);
-        }
-        if(nr > 0 || nw > 0){
-            dw++;
-            try {
-                e.acquire();
-            } catch (InterruptedException ex) {
-                throw new RuntimeException(ex);
-            }
-            w.release();
-        }
-        nw++;
-        e.release();
+        requestWrite();
         catalogo.put(p.getName(), p);
-        try {
-            e.acquire();
-        } catch (InterruptedException ex) {
-            throw new RuntimeException(ex);
-        }
-        nw--;
-        if(dw > 0){
-            dw--;
-            w.release();
-        }
-        else if(dr > 0){
-            dr--;
-            r.release();
-        }
-        else{
-            e.release();
-        }
-
+        releaseWrite();
     }
 
     public Pelicula read(String s) {
-        try {
-            e.acquire();
-            if(nw > 0 || dw > 0){
-                dr++;
-                e.release();
-                r.acquire();
-            }
-        } catch (InterruptedException ex) {
-            throw new RuntimeException(ex);
-        }
-        nr++;
-        if(dr > 0){
-            dr--;
-            r.release();
-        }
-        else{
-            e.release();
-        }
+        requestRead();
         Pelicula aux = catalogo.get(s);
         Pelicula res;
         if(aux == null)
             res = null;
         else
             res = new Pelicula(aux);
-        try {
-            e.acquire();
-        } catch (InterruptedException ex) {
-            throw new RuntimeException(ex);
-        }
-        nr--;
-        if(nr == 0 && dw > 0){
-            dw--;
-            w.release();
-        }
-        else{
-            e.release();
-        }
+        releaseRead();
         return res;
     }
 }

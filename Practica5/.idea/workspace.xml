@@ -5,22 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b32986-74fb-4534-a0bf-7c0c426d4e21" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Parte2/src/Monitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parte2/src/MonitorCond.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parte2/src/MonitorSem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/Catalogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Catalogo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parte2/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/OyenteServidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/TablaFlujo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/TablaFlujo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parte2/src/TablaUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parte2/src/TablaUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Parte2/Catalogo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Catalogo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Parte2/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Flujo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Flujo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenError.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenPedirFich.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenPedirFich.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenPrepCS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenPrepCS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/MenPrepSC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/MenPrepSC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/OyenteServidor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/OyenteServidor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/OyenteServidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/OyenteServidor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Pelicula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Pelicula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Receptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Receptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parte2/miLockTicket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/miLockTicket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/TablaFlujo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/TablaFlujo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Parte2/TablaUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parte2/TablaUsuario.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -48,6 +45,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;F:/Universidad/Cuarto/Programacion Concurrente/Practica-Concurrente/Practica5&quot;
   }
 }</component>
