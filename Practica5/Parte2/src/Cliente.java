@@ -29,7 +29,7 @@ public class Cliente {
         foutC.flush();
         ObjectInputStream finC = new ObjectInputStream(s.getInputStream()); //Creamos flujo de entrada
         HashMap<String, Pelicula> hm = new HashMap<>(); //Lista de peliculas que tiene el cliente
-        hm.put("Star Wars", new Pelicula("Star Wars"));
+        hm.put("Knives Out", new Pelicula("Knives Out"));
         Usuario usr = new Usuario(id_usr, ip, hm); //Creamos el usuario con la informacion que tenemos
         miLock l = new miLockTicket(2); //Crearemos un lock para agrupar los println por bloques
         OyenteServidor o = new OyenteServidor(usr, finC, foutC, l);
@@ -50,11 +50,15 @@ public class Cliente {
             do{
                 l.takeLock(0); //Tambien esperamos a q el usuario escriba la opcion correctamente
                 System.out.println("Opción elegida(1,2,3): ");
+                l.releaseLock(0);
                 eleccion = sc.nextInt();
                 sc.nextLine();
-                if(eleccion < 1 || eleccion > 3)
+                if(eleccion < 1 || eleccion > 3) {
+                    l.takeLock(0);
                     System.out.println("Opción incorrecta, vuelva a intentarlo");
-                l.releaseLock(0);
+                    l.releaseLock(0);
+                }
+
             }while(eleccion < 1 || eleccion > 3);
             switch (eleccion) {
                 case 1 -> {
@@ -73,12 +77,6 @@ public class Cliente {
                     terminar = true;
                     foutC.writeObject(new MenCerrCon(usr.getId())); //Mandamos mensaje de cierre de conexion
                 }
-            }
-            try{
-                Thread.sleep(500); //Hacemos que el menu espere medio segundo por posible respuesta del oyenteservidor
-            }
-            catch(InterruptedException e){
-                System.out.println("Cliente interrumpido");
             }
         }
         o.join();

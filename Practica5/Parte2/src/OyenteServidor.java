@@ -27,40 +27,50 @@ public class OyenteServidor extends Thread{
         while(!terminar){
             try {
                 m = (Mensaje) fin.readObject();
-                l.takeLock(1); //Evitamos entrelazado en el println
                 switch (m.getTipo()) {
 
                     case M_CONF_CONEXION -> {
+                        l.takeLock(1);
                         System.out.println("Conexión realizada con éxito");
+                        l.releaseLock(1);
                     }
                     case M_CONF_LISTA_USR -> { //Escribimos la lista recibida del servidor
                         MenConfList aux = (MenConfList) m;
+                        l.takeLock(1);
                         System.out.println(aux.getLista());
+                        l.releaseLock(1);
                     }
                     case M_EMITIR_FICHERO -> {
                         MenEmitirFich aux = (MenEmitirFich) m;
-                        System.out.println("Emitiendo fichero " + aux.getPelicula());
                         Emisor e = new Emisor(usr.getInfo().get(aux.getPelicula()), aux.getPuertos());
                         e.start(); //Iniciamos la emision de la pelicula especificada por el mensaje
                         fout.writeObject(new MenPrepCS(usr.getId(), aux.getDestino(), InetAddress.getLocalHost().getHostAddress(), aux.getPelicula(), aux.getPuertos()));
+                        l.takeLock(1);
+                        System.out.println("Emitiendo fichero " + aux.getPelicula());
+                        l.releaseLock(1);
                         //Confirmamos la emision al servidor
                     }
                     case M_PREPARADO_SC -> {
                         MenPrepSC maux = (MenPrepSC) m;
-                        System.out.println("Recibiendo el fichero " + maux.getPelicula() + " de " + maux.getOrigen());
                         Receptor r = new Receptor(maux.getIP(), maux.getPort(), usr, new Flujo(fin, fout)); //Iniciamos la recepcion del fichero
                         r.start();
+                        l.takeLock(1);
+                        System.out.println("Recibiendo el fichero " + maux.getPelicula() + " de " + maux.getOrigen());
+                        l.releaseLock(1);
                     }
                     case M_CONF_CERRAR_CONEXION -> {
-                        System.out.println("Conexión cerrada con éxito");
                         terminar = true;
+                        l.takeLock(1);
+                        System.out.println("Conexión cerrada con éxito");
+                        l.releaseLock(1);
                     }
                     case M_ERROR -> {
                         MenError aux = (MenError) m; //Recibimos mensaje de errror y escribimos el error por pantalla
+                        l.takeLock(1);
                         System.out.println(aux.getMen());
+                        l.releaseLock(1);
                     }
                 }
-                l.releaseLock(1);
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
